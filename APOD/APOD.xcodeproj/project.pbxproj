@@ -101,6 +101,7 @@
 				098BE92C2A3B7C5B0087D150 /* Common */,
 				098BE92B2A3B796F0087D150 /* Info.plist */,
 				098BE9242A39F8530087D150 /* Extensions */,
+				098BE9482A41A4DB0087D150 /* CoreData */,
 				098BE91C2A39E73B0087D150 /* Services */,
 				098BE9172A39A0F70087D150 /* Models */,
 				098BE90F2A3893B40087D150 /* Networking */,
@@ -126,8 +127,6 @@
 			children = (
 				098BE9212A39F3CC0087D150 /* REST */,
 				098BE9142A3916C90087D150 /* Requests */,
-				098BE9102A3894460087D150 /* RESTRequestProtocol.swift */,
-				098BE9122A38C0280087D150 /* RESTNetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -152,7 +151,6 @@
 		098BE91C2A39E73B0087D150 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				098BE9482A41A4DB0087D150 /* CoreData */,
 				098BE91D2A39F1CA0087D150 /* APODService.swift */,
 			);
 			path = Services;
@@ -162,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				098BE9222A39F3DF0087D150 /* RequestState.swift */,
+				098BE9102A3894460087D150 /* RESTRequestProtocol.swift */,
+				098BE9122A38C0280087D150 /* RESTNetworkService.swift */,
 			);
 			path = REST;
 			sourceTree = "<group>";
@@ -189,11 +189,9 @@
 		098BE92F2A3C528A0087D150 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				098BE9932A444AB50087D150 /* Common */,
+				098BE9922A444AA80087D150 /* HomeScreen */,
 				098BE94D2A41FE600087D150 /* Favourites */,
-				098BE90D2A3887840087D150 /* HomeScreenView.swift */,
-				098BE91F2A39F3930087D150 /* HomeScreenViewModel.swift */,
-				098BE9272A3A2E990087D150 /* APODDetailsView.swift */,
-				098BE9302A3C58080087D150 /* ErrorView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -232,6 +230,24 @@
 				098BE9532A4293AB0087D150 /* VideoPlayerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		098BE9922A444AA80087D150 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				098BE90D2A3887840087D150 /* HomeScreenView.swift */,
+				098BE91F2A39F3930087D150 /* HomeScreenViewModel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		098BE9932A444AB50087D150 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9272A3A2E990087D150 /* APODDetailsView.swift */,
+				098BE9302A3C58080087D150 /* ErrorView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
