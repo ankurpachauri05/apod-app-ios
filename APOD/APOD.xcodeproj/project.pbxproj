@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		098BE8FF2A3883060087D150 /* APODApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE8FE2A3883060087D150 /* APODApp.swift */; };
+		098BE9032A3883070087D150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9022A3883070087D150 /* Assets.xcassets */; };
+		098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9052A3883070087D150 /* Preview Assets.xcassets */; };
+		098BE90E2A3887840087D150 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE90D2A3887840087D150 /* HomeScreenView.swift */; };
+		098BE9112A3894460087D150 /* RESTRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9102A3894460087D150 /* RESTRequestProtocol.swift */; };
+		098BE9132A38C0280087D150 /* RESTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9122A38C0280087D150 /* RESTNetworkService.swift */; };
+		098BE9162A39172D0087D150 /* APODRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9152A39172D0087D150 /* APODRequests.swift */; };
+		098BE9192A39A1A70087D150 /* AstronomyPictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9182A39A1A70087D150 /* AstronomyPictureDTO.swift */; };
+		098BE91B2A39A1F00087D150 /* AstronomyPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE91A2A39A1F00087D150 /* AstronomyPicture.swift */; };
+		098BE91E2A39F1CA0087D150 /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE91D2A39F1CA0087D150 /* APODService.swift */; };
+		098BE9202A39F3930087D150 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE91F2A39F3930087D150 /* HomeScreenViewModel.swift */; };
+		098BE9232A39F3DF0087D150 /* RequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9222A39F3DF0087D150 /* RequestState.swift */; };
+		098BE9262A39F86A0087D150 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9252A39F86A0087D150 /* View+Extension.swift */; };
+		098BE9282A3A2E990087D150 /* APODDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9272A3A2E990087D150 /* APODDetailsView.swift */; };
+		098BE92A2A3B6CA70087D150 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9292A3B6CA70087D150 /* Date+Extension.swift */; };
+		098BE92E2A3B7C790087D150 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE92D2A3B7C790087D150 /* CacheManager.swift */; };
+		098BE9312A3C58080087D150 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9302A3C58080087D150 /* ErrorView.swift */; };
+		098BE9382A3C99900087D150 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9372A3C99900087D150 /* Reachability.swift */; };
+		098BE93A2A3C9B940087D150 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9392A3C9B940087D150 /* Errors.swift */; };
+		098BE93D2A40BB9C0087D150 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 098BE93B2A40BB9C0087D150 /* APOD.xcdatamodeld */; };
+		098BE9432A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */; };
+		098BE9442A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */; };
+		098BE9462A4194AE0087D150 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9452A4194AE0087D150 /* PersistentStorage.swift */; };
+		098BE94C2A41A8060087D150 /* AstronomyPictureDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE94B2A41A8060087D150 /* AstronomyPictureDataRepository.swift */; };
+		098BE94F2A41FE950087D150 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE94E2A41FE950087D150 /* FavouritesView.swift */; };
+		098BE9512A41FEA90087D150 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9502A41FEA90087D150 /* FavouritesViewModel.swift */; };
+		098BE9542A4293AB0087D150 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9532A4293AB0087D150 /* VideoPlayerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		098BE8FB2A3883060087D150 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		098BE8FE2A3883060087D150 /* APODApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODApp.swift; sourceTree = "<group>"; };
+		098BE9022A3883070087D150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		098BE9052A3883070087D150 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		098BE90D2A3887840087D150 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		098BE9102A3894460087D150 /* RESTRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTRequestProtocol.swift; sourceTree = "<group>"; };
+		098BE9122A38C0280087D150 /* RESTNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTNetworkService.swift; sourceTree = "<group>"; };
+		098BE9152A39172D0087D150 /* APODRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODRequests.swift; sourceTree = "<group>"; };
+		098BE9182A39A1A70087D150 /* AstronomyPictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureDTO.swift; sourceTree = "<group>"; };
+		098BE91A2A39A1F00087D150 /* AstronomyPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPicture.swift; sourceTree = "<group>"; };
+		098BE91D2A39F1CA0087D150 /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
+		098BE91F2A39F3930087D150 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		098BE9222A39F3DF0087D150 /* RequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestState.swift; sourceTree = "<group>"; };
+		098BE9252A39F86A0087D150 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		098BE9272A3A2E990087D150 /* APODDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODDetailsView.swift; sourceTree = "<group>"; };
+		098BE9292A3B6CA70087D150 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		098BE92B2A3B796F0087D150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		098BE92D2A3B7C790087D150 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		098BE9302A3C58080087D150 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		098BE9372A3C99900087D150 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		098BE9392A3C9B940087D150 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		098BE93C2A40BB9C0087D150 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
+		098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAstronomyPicture+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAstronomyPicture+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		098BE9452A4194AE0087D150 /* PersistentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		098BE94B2A41A8060087D150 /* AstronomyPictureDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureDataRepository.swift; sourceTree = "<group>"; };
+		098BE94E2A41FE950087D150 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		098BE9502A41FEA90087D150 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		098BE9532A4293AB0087D150 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		098BE8F82A3883060087D150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		098BE8F22A3883060087D150 = {
+			isa = PBXGroup;
+			children = (
+				098BE8FD2A3883060087D150 /* APOD */,
+				098BE8FC2A3883060087D150 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		098BE8FC2A3883060087D150 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				098BE8FB2A3883060087D150 /* APOD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		098BE8FD2A3883060087D150 /* APOD */ = {
+			isa = PBXGroup;
+			children = (
+				098BE92C2A3B7C5B0087D150 /* Common */,
+				098BE92B2A3B796F0087D150 /* Info.plist */,
+				098BE9242A39F8530087D150 /* Extensions */,
+				098BE91C2A39E73B0087D150 /* Services */,
+				098BE9172A39A0F70087D150 /* Models */,
+				098BE90F2A3893B40087D150 /* Networking */,
+				098BE92F2A3C528A0087D150 /* Features */,
+				098BE8FE2A3883060087D150 /* APODApp.swift */,
+				098BE9022A3883070087D150 /* Assets.xcassets */,
+				098BE93B2A40BB9C0087D150 /* APOD.xcdatamodeld */,
+				098BE9042A3883070087D150 /* Preview Content */,
+			);
+			path = APOD;
+			sourceTree = "<group>";
+		};
+		098BE9042A3883070087D150 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9052A3883070087D150 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		098BE90F2A3893B40087D150 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9212A39F3CC0087D150 /* REST */,
+				098BE9142A3916C90087D150 /* Requests */,
+				098BE9102A3894460087D150 /* RESTRequestProtocol.swift */,
+				098BE9122A38C0280087D150 /* RESTNetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		098BE9142A3916C90087D150 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9152A39172D0087D150 /* APODRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		098BE9172A39A0F70087D150 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9182A39A1A70087D150 /* AstronomyPictureDTO.swift */,
+				098BE91A2A39A1F00087D150 /* AstronomyPicture.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		098BE91C2A39E73B0087D150 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9482A41A4DB0087D150 /* CoreData */,
+				098BE91D2A39F1CA0087D150 /* APODService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		098BE9212A39F3CC0087D150 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9222A39F3DF0087D150 /* RequestState.swift */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+		098BE9242A39F8530087D150 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9252A39F86A0087D150 /* View+Extension.swift */,
+				098BE9292A3B6CA70087D150 /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		098BE92C2A3B7C5B0087D150 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9522A42938C0087D150 /* Views */,
+				098BE92D2A3B7C790087D150 /* CacheManager.swift */,
+				098BE9372A3C99900087D150 /* Reachability.swift */,
+				098BE9392A3C9B940087D150 /* Errors.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		098BE92F2A3C528A0087D150 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				098BE94D2A41FE600087D150 /* Favourites */,
+				098BE90D2A3887840087D150 /* HomeScreenView.swift */,
+				098BE91F2A39F3930087D150 /* HomeScreenViewModel.swift */,
+				098BE9272A3A2E990087D150 /* APODDetailsView.swift */,
+				098BE9302A3C58080087D150 /* ErrorView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		098BE9402A418F8D0087D150 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */,
+				098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		098BE9482A41A4DB0087D150 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9402A418F8D0087D150 /* SupportFiles */,
+				098BE9452A4194AE0087D150 /* PersistentStorage.swift */,
+				098BE94B2A41A8060087D150 /* AstronomyPictureDataRepository.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		098BE94D2A41FE600087D150 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				098BE94E2A41FE950087D150 /* FavouritesView.swift */,
+				098BE9502A41FEA90087D150 /* FavouritesViewModel.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		098BE9522A42938C0087D150 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9532A4293AB0087D150 /* VideoPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		098BE8FA2A3883060087D150 /* APOD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 098BE9092A3883070087D150 /* Build configuration list for PBXNativeTarget "APOD" */;
+			buildPhases = (
+				098BE8F72A3883060087D150 /* Sources */,
+				098BE8F82A3883060087D150 /* Frameworks */,
+				098BE8F92A3883060087D150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = APOD;
+			productName = APOD;
+			productReference = 098BE8FB2A3883060087D150 /* APOD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		098BE8F32A3883060087D150 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					098BE8FA2A3883060087D150 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 098BE8F62A3883060087D150 /* Build configuration list for PBXProject "APOD" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 098BE8F22A3883060087D150;
+			productRefGroup = 098BE8FC2A3883060087D150 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				098BE8FA2A3883060087D150 /* APOD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		098BE8F92A3883060087D150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */,
+				098BE9032A3883070087D150 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		098BE8F72A3883060087D150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098BE9442A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift in Sources */,
+				098BE9162A39172D0087D150 /* APODRequests.swift in Sources */,
+				098BE9432A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift in Sources */,
+				098BE93D2A40BB9C0087D150 /* APOD.xcdatamodeld in Sources */,
+				098BE9202A39F3930087D150 /* HomeScreenViewModel.swift in Sources */,
+				098BE92A2A3B6CA70087D150 /* Date+Extension.swift in Sources */,
+				098BE9462A4194AE0087D150 /* PersistentStorage.swift in Sources */,
+				098BE94C2A41A8060087D150 /* AstronomyPictureDataRepository.swift in Sources */,
+				098BE9512A41FEA90087D150 /* FavouritesViewModel.swift in Sources */,
+				098BE91E2A39F1CA0087D150 /* APODService.swift in Sources */,
+				098BE91B2A39A1F00087D150 /* AstronomyPicture.swift in Sources */,
+				098BE9132A38C0280087D150 /* RESTNetworkService.swift in Sources */,
+				098BE92E2A3B7C790087D150 /* CacheManager.swift in Sources */,
+				098BE9112A3894460087D150 /* RESTRequestProtocol.swift in Sources */,
+				098BE9192A39A1A70087D150 /* AstronomyPictureDTO.swift in Sources */,
+				098BE9262A39F86A0087D150 /* View+Extension.swift in Sources */,
+				098BE9312A3C58080087D150 /* ErrorView.swift in Sources */,
+				098BE94F2A41FE950087D150 /* FavouritesView.swift in Sources */,
+				098BE9232A39F3DF0087D150 /* RequestState.swift in Sources */,
+				098BE9542A4293AB0087D150 /* VideoPlayerView.swift in Sources */,
+				098BE9282A3A2E990087D150 /* APODDetailsView.swift in Sources */,
+				098BE93A2A3C9B940087D150 /* Errors.swift in Sources */,
+				098BE8FF2A3883060087D150 /* APODApp.swift in Sources */,
+				098BE9382A3C99900087D150 /* Reachability.swift in Sources */,
+				098BE90E2A3887840087D150 /* HomeScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		098BE9072A3883070087D150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		098BE9082A3883070087D150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		098BE90A2A3883070087D150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"APOD/Preview Content\"";
+				DEVELOPMENT_TEAM = V4L2483CLU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = APOD/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.APOD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		098BE90B2A3883070087D150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"APOD/Preview Content\"";
+				DEVELOPMENT_TEAM = V4L2483CLU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = APOD/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.APOD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		098BE8F62A3883060087D150 /* Build configuration list for PBXProject "APOD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098BE9072A3883070087D150 /* Debug */,
+				098BE9082A3883070087D150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		098BE9092A3883070087D150 /* Build configuration list for PBXNativeTarget "APOD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098BE90A2A3883070087D150 /* Debug */,
+				098BE90B2A3883070087D150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		098BE93B2A40BB9C0087D150 /* APOD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				098BE93C2A40BB9C0087D150 /* APOD.xcdatamodel */,
+			);
+			currentVersion = 098BE93C2A40BB9C0087D150 /* APOD.xcdatamodel */;
+			path = APOD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 098BE8F32A3883060087D150 /* Project object */;
+}
