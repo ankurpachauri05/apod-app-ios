@@ -178,7 +178,6 @@
 		098BE92C2A3B7C5B0087D150 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				098BE9522A42938C0087D150 /* Views */,
 				098BE92D2A3B7C790087D150 /* CacheManager.swift */,
 				098BE9372A3C99900087D150 /* Reachability.swift */,
 				098BE9392A3C9B940087D150 /* Errors.swift */,
@@ -224,14 +223,6 @@
 			path = Favourites;
 			sourceTree = "<group>";
 		};
-		098BE9522A42938C0087D150 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				098BE9532A4293AB0087D150 /* VideoPlayerView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		098BE9922A444AA80087D150 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +235,7 @@
 		098BE9932A444AB50087D150 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				098BE9532A4293AB0087D150 /* VideoPlayerView.swift */,
 				098BE9272A3A2E990087D150 /* APODDetailsView.swift */,
 				098BE9302A3C58080087D150 /* ErrorView.swift */,
 			);
