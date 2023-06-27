@@ -16,7 +16,7 @@ struct HomeScreenView: View {
             VStack {
                 HStack {
                     DatePicker(selection: $date, in: ...Date.now, displayedComponents: .date) {
-                        Text("Pick a date:")
+                        Text("home.picker.title".localized())
                             .font(.system(size: 12))
                     }
                     
@@ -25,7 +25,7 @@ struct HomeScreenView: View {
                             await viewModel.getAstronomyPictureOfDay(date.toDateString())
                         }
                     }, label: {
-                        Text("Search")
+                        Text("home.button.search.title".localized())
                     })
                     .padding(.leading, 8)
                 }
@@ -50,11 +50,11 @@ struct HomeScreenView: View {
                     EmptyView()
                 }
             }
-            .navigationTitle("APOD")
+            .navigationTitle("screen.home.title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink("Favourites", destination: FavouritesView(viewModel: .init()))
+                    NavigationLink("home.button.favourites.title".localized(), destination: FavouritesView(viewModel: .init()))
                 }
             })
             .task {

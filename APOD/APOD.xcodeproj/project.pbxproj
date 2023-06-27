@@ -34,6 +34,8 @@
 		098BE94F2A41FE950087D150 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE94E2A41FE950087D150 /* FavouritesView.swift */; };
 		098BE9512A41FEA90087D150 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9502A41FEA90087D150 /* FavouritesViewModel.swift */; };
 		098BE9542A4293AB0087D150 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9532A4293AB0087D150 /* VideoPlayerView.swift */; };
+		098BE9BD2A4B56450087D150 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9BF2A4B56450087D150 /* Localizable.strings */; };
+		098BE9C12A4B57750087D150 /* String+LocalizableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9C02A4B57750087D150 /* String+LocalizableExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,13 +61,15 @@
 		098BE9372A3C99900087D150 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		098BE9392A3C9B940087D150 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		098BE93C2A40BB9C0087D150 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
-		098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAstronomyPicture+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAstronomyPicture+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAstronomyPicture+CoreDataClass.swift"; path = "APOD/CoreData/SupportFiles/CDAstronomyPicture+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAstronomyPicture+CoreDataProperties.swift"; path = "APOD/CoreData/SupportFiles/CDAstronomyPicture+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		098BE9452A4194AE0087D150 /* PersistentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		098BE94B2A41A8060087D150 /* AstronomyPictureDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureDataRepository.swift; sourceTree = "<group>"; };
 		098BE94E2A41FE950087D150 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		098BE9502A41FEA90087D150 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
 		098BE9532A4293AB0087D150 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		098BE9BE2A4B56450087D150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		098BE9C02A4B57750087D150 /* String+LocalizableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizableExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				098BE9022A3883070087D150 /* Assets.xcassets */,
 				098BE93B2A40BB9C0087D150 /* APOD.xcdatamodeld */,
 				098BE9042A3883070087D150 /* Preview Content */,
+				098BE9BF2A4B56450087D150 /* Localizable.strings */,
 			);
 			path = APOD;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				098BE9252A39F86A0087D150 /* View+Extension.swift */,
 				098BE9292A3B6CA70087D150 /* Date+Extension.swift */,
+				098BE9C02A4B57750087D150 /* String+LocalizableExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,19 +201,10 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		098BE9402A418F8D0087D150 /* SupportFiles */ = {
-			isa = PBXGroup;
-			children = (
-				098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */,
-				098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */,
-			);
-			path = SupportFiles;
-			sourceTree = "<group>";
-		};
 		098BE9482A41A4DB0087D150 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				098BE9402A418F8D0087D150 /* SupportFiles */,
+				098BE9B32A4B2BBE0087D150 /* SupportFiles */,
 				098BE9452A4194AE0087D150 /* PersistentStorage.swift */,
 				098BE94B2A41A8060087D150 /* AstronomyPictureDataRepository.swift */,
 			);
@@ -240,6 +237,15 @@
 				098BE9302A3C58080087D150 /* ErrorView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		098BE9B32A4B2BBE0087D150 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9412A4190650087D150 /* CDAstronomyPicture+CoreDataClass.swift */,
+				098BE9422A4190650087D150 /* CDAstronomyPicture+CoreDataProperties.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */,
+				098BE9BD2A4B56450087D150 /* Localizable.strings in Resources */,
 				098BE9032A3883070087D150 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,10 +344,22 @@
 				098BE8FF2A3883060087D150 /* APODApp.swift in Sources */,
 				098BE9382A3C99900087D150 /* Reachability.swift in Sources */,
 				098BE90E2A3887840087D150 /* HomeScreenView.swift in Sources */,
+				098BE9C12A4B57750087D150 /* String+LocalizableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		098BE9BF2A4B56450087D150 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098BE9BE2A4B56450087D150 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		098BE9072A3883070087D150 /* Debug */ = {

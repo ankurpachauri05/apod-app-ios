@@ -25,7 +25,7 @@ struct APODDetailsView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 250)
                     } else {
-                        if let image: Image = CacheManager.shared.cachedValue(forKey: "\(data.date)_image") {
+                        if let image: Image = CacheManager.shared.cachedImage(forKey: "\(data.date)_image") {
                             image
                                 .resizable()
                                 .frame(maxWidth: .infinity)
@@ -35,7 +35,7 @@ struct APODDetailsView: View {
                                let url = URL(string: urlString) {
                                 AsyncImage(url: url, content: { phase in
                                     view(for: phase, failStateImage: "placeholder", onSuccess: { image in
-                                        CacheManager.shared.cacheValue(image, forKey: "\(data.date)_image")
+                                        CacheManager.shared.cacheImage(image, forKey: "\(data.date)_image")
                                     })
                                 })
                                 .frame(maxWidth: .infinity, minHeight: 250)

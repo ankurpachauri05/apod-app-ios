@@ -32,11 +32,7 @@ class HomeScreenViewModel: ObservableObject {
             } else {
                 // No Internet connection...
                 
-                if let data: AstronomyPicture = CacheManager.shared.cachedValue(forKey: CachingKeys.astronomyData.rawValue) {
-                    requestState = .success(data)
-                } else {
-                    requestState = .failure(CustomError.noInternet)
-                }
+                requestState = .failure(CustomError.noInternet)
             }
         }
     }
