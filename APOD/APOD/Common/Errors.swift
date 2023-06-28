@@ -18,6 +18,7 @@ enum RequestError: Error {
 // MARK: CustomError
 enum CustomError: Error {
     case noInternet
+    case emptyDateString
 }
 
 // MARK: DirectoryError

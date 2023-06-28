@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093AEE202A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */; };
+		093AEE222A4CB17700B55DC7 /* APODService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */; };
 		098BE8FF2A3883060087D150 /* APODApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE8FE2A3883060087D150 /* APODApp.swift */; };
 		098BE9032A3883070087D150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9022A3883070087D150 /* Assets.xcassets */; };
 		098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9052A3883070087D150 /* Preview Assets.xcassets */; };
@@ -36,9 +38,23 @@
 		098BE9542A4293AB0087D150 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9532A4293AB0087D150 /* VideoPlayerView.swift */; };
 		098BE9BD2A4B56450087D150 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9BF2A4B56450087D150 /* Localizable.strings */; };
 		098BE9C12A4B57750087D150 /* String+LocalizableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9C02A4B57750087D150 /* String+LocalizableExtension.swift */; };
+		098BE9C92A4C2CDD0087D150 /* APODTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9C82A4C2CDD0087D150 /* APODTests.swift */; };
+		098BE9D02A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE9CF2A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		098BE9CA2A4C2CDD0087D150 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 098BE8F32A3883060087D150 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 098BE8FA2A3883060087D150;
+			remoteInfo = APOD;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel_Tests.swift; sourceTree = "<group>"; };
+		093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService_Tests.swift; sourceTree = "<group>"; };
 		098BE8FB2A3883060087D150 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098BE8FE2A3883060087D150 /* APODApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODApp.swift; sourceTree = "<group>"; };
 		098BE9022A3883070087D150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,10 +86,20 @@
 		098BE9532A4293AB0087D150 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		098BE9BE2A4B56450087D150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		098BE9C02A4B57750087D150 /* String+LocalizableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizableExtension.swift"; sourceTree = "<group>"; };
+		098BE9C62A4C2CDD0087D150 /* APODTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APODTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		098BE9C82A4C2CDD0087D150 /* APODTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTests.swift; sourceTree = "<group>"; };
+		098BE9CF2A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		098BE8F82A3883060087D150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		098BE9C32A4C2CDD0087D150 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				098BE8FD2A3883060087D150 /* APOD */,
+				098BE9C72A4C2CDD0087D150 /* APODTests */,
 				098BE8FC2A3883060087D150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				098BE8FB2A3883060087D150 /* APOD.app */,
+				098BE9C62A4C2CDD0087D150 /* APODTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +276,17 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		098BE9C72A4C2CDD0087D150 /* APODTests */ = {
+			isa = PBXGroup;
+			children = (
+				098BE9C82A4C2CDD0087D150 /* APODTests.swift */,
+				098BE9CF2A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift */,
+				093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */,
+				093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */,
+			);
+			path = APODTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,6 +307,24 @@
 			productReference = 098BE8FB2A3883060087D150 /* APOD.app */;
 			productType = "com.apple.product-type.application";
 		};
+		098BE9C52A4C2CDD0087D150 /* APODTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 098BE9CE2A4C2CDD0087D150 /* Build configuration list for PBXNativeTarget "APODTests" */;
+			buildPhases = (
+				098BE9C22A4C2CDD0087D150 /* Sources */,
+				098BE9C32A4C2CDD0087D150 /* Frameworks */,
+				098BE9C42A4C2CDD0087D150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				098BE9CB2A4C2CDD0087D150 /* PBXTargetDependency */,
+			);
+			name = APODTests;
+			productName = APODTests;
+			productReference = 098BE9C62A4C2CDD0087D150 /* APODTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -280,6 +337,10 @@
 				TargetAttributes = {
 					098BE8FA2A3883060087D150 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					098BE9C52A4C2CDD0087D150 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 098BE8FA2A3883060087D150;
 					};
 				};
 			};
@@ -297,6 +358,7 @@
 			projectRoot = "";
 			targets = (
 				098BE8FA2A3883060087D150 /* APOD */,
+				098BE9C52A4C2CDD0087D150 /* APODTests */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +371,13 @@
 				098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */,
 				098BE9BD2A4B56450087D150 /* Localizable.strings in Resources */,
 				098BE9032A3883070087D150 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		098BE9C42A4C2CDD0087D150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +417,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		098BE9C22A4C2CDD0087D150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098BE9C92A4C2CDD0087D150 /* APODTests.swift in Sources */,
+				093AEE222A4CB17700B55DC7 /* APODService_Tests.swift in Sources */,
+				093AEE202A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift in Sources */,
+				098BE9D02A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		098BE9CB2A4C2CDD0087D150 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 098BE8FA2A3883060087D150 /* APOD */;
+			targetProxy = 098BE9CA2A4C2CDD0087D150 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		098BE9BF2A4B56450087D150 /* Localizable.strings */ = {
@@ -536,6 +624,42 @@
 			};
 			name = Release;
 		};
+		098BE9CC2A4C2CDD0087D150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4L2483CLU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.APODTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APOD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APOD";
+			};
+			name = Debug;
+		};
+		098BE9CD2A4C2CDD0087D150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4L2483CLU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.APODTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APOD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APOD";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +677,15 @@
 			buildConfigurations = (
 				098BE90A2A3883070087D150 /* Debug */,
 				098BE90B2A3883070087D150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		098BE9CE2A4C2CDD0087D150 /* Build configuration list for PBXNativeTarget "APODTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098BE9CC2A4C2CDD0087D150 /* Debug */,
+				098BE9CD2A4C2CDD0087D150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

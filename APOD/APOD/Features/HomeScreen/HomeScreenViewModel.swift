@@ -14,6 +14,11 @@ class HomeScreenViewModel: ObservableObject {
     
     @MainActor
     func getAstronomyPictureOfDay(_ date: String) async {
+        guard !date.isEmpty else {
+            requestState = .failure(CustomError.emptyDateString)
+            return
+        }
+        
         if let data: AstronomyPicture = CacheManager.shared.cachedValue(forKey: date) {
             // data already exist in cache..
             requestState = .success(data)
