@@ -14,9 +14,9 @@ struct ErrorView: View {
         VStack {
             Image("error")
             
-            Text("Something went wrong!")
+            Text("error.message.failed".localized())
             
-            Button("Try again", action: callback)
+            Button("error.button.tryAgain.title".localized(), action: callback)
         }
     }
 }

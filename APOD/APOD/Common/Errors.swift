@@ -19,3 +19,11 @@ enum RequestError: Error {
 enum CustomError: Error {
     case noInternet
 }
+
+// MARK: DirectoryError
+enum DirectoryError: Error {
+    case containerURLNotFound
+    case savingFailed
+    case fetchingFailed
+    case deletionFailed
+}

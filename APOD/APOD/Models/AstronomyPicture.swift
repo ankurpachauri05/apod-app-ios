@@ -18,6 +18,6 @@ struct AstronomyPicture: Codable {
 
 extension AstronomyPicture {
     static func placeholderData() -> AstronomyPicture {
-        return .init(date: "2023-06-09", explanation: "Sample Explanation", hdurl: "https://picsum.photos/200/300", mediaType: .image, title: "Astronomy Picture", url: "https://picsum.photos/200/300")
+        return .init(date: "shimmer.dummy.small".localized(), explanation: "shimmer.dummy.large".localized(), hdurl: nil, mediaType: .image, title: "shimmer.dummy.medium".localized(), url: "")
     }
 }

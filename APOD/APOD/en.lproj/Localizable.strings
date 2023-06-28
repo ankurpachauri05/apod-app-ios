@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  APOD
+
+  Created by Pachauri, Ankur on 27/06/23.
+  
+*/
+
+/* Screens Title */
+"screen.home.title" = "APOD";
+"screen.favourites.title" = "Favourites";
+
+/* Home Screen */
+"home.picker.title" = "Pick a date:";
+"home.button.search.title" = "Search";
+"home.button.favourites.title" = "Favourites";
+
+/* Favourites Screen */
+"favourites.message.noFavourites" = "No favourites found!";
+
+/* Error Screen */
+"error.message.failed" = "Something went wrong!";
+"error.button.tryAgain.title" = "Try again";
+
+/* Shimmer Texts */
+"shimmer.dummy.small" = "#######";
+"shimmer.dummy.medium" = "##############";
+"shimmer.dummy.large" = "#####################";

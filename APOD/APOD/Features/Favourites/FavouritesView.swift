@@ -29,10 +29,10 @@ struct FavouritesView: View {
                         })
                     }
                 } else {
-                    Text("No favourites found!")
+                    Text("favourites.message.noFavourites".localized())
                 }
             }
-            .navigationTitle("Favourites")
+            .navigationTitle("screen.favourites.title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewModel.getAllFavouritesData()
