@@ -68,14 +68,14 @@ The project is divided into distinct modules or components that encapsulate spec
 
 ## Templates
 
-Suppose we have a screen to show a list Astronomy Pictures. So, we can use the below templates example for MVVM architecture:
+Suppose we have a screen to display a list of Astronomy Pictures. Please use the example templates below for the MVVM pattern:
 
 #### AstronomyPicture.swift (Model)
 ```swift
 import Foundation
 
 struct AstronomyPicture: Codable {
-    
+    // Properties..    
 }
 
 ```
@@ -88,7 +88,7 @@ class AstronomyPicturesListViewModel: ObservableObject {
     @Published var data: [AstronomyPicture] = []
     
     func getAstronomyPicturesList() {
-        
+        // Business logic...    
     }
 
 }
@@ -103,7 +103,7 @@ struct AstronomyPicturesListView: View {
     @ObservedObject var viewModel: AstronomyPicturesListViewModel
     
     var body: some View {
-        
+        // UI code...    
     }
 }
 
