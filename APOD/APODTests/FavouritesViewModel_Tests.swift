@@ -9,39 +9,47 @@ import XCTest
 @testable import APOD
 
 final class FavouritesViewModel_Tests: XCTestCase {
+    var sut: FavouritesViewModel!
+    
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = FavouritesViewModel()
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+    }
 
     func test_getAllFavouritesData_With_NoLocalFavouritesData_Returns_EmptyArray() {
         // ARRANGE
-        let viewModel = FavouritesViewModel()
         
         // ACT
-        viewModel.getAllFavouritesData()
+        sut.getAllFavouritesData()
         
         // ASSERT
-        XCTAssertTrue(viewModel.data.isEmpty)
+        XCTAssertTrue(sut.data.isEmpty)
     }
     
     func test_getAllFavouritesData_With_LocalFavouritesData_Returns_NonEmptyArray() {
         // ARRANGE
         let data = AstronomyPicture.mockData()
-        let viewModel = FavouritesViewModel()
         
         AstronomyPictureDataRepository.addFavorite(data: data)
         
         // ACT
-        viewModel.getAllFavouritesData()
+        sut.getAllFavouritesData()
         
         // ASSERT
-        XCTAssertFalse(viewModel.data.isEmpty)
+        XCTAssertFalse(sut.data.isEmpty)
     }
     
     func test_deleteFavourite_With_NoLocalFavouritesData_Returns_Success() {
         // ARRANGE
         let data = AstronomyPicture.mockData()
-        let viewModel = FavouritesViewModel()
         
         // ACT
-        viewModel.deleteFavourite(data)
+        sut.deleteFavourite(data)
         
         // ASSERT
         XCTAssertNil(AstronomyPictureDataRepository.getFavorite(byDate: data.date))
@@ -50,12 +58,11 @@ final class FavouritesViewModel_Tests: XCTestCase {
     func test_deleteFavourite_With_LocalFavouritesData_Returns_Success() {
         // ARRANGE
         let data = AstronomyPicture.mockData()
-        let viewModel = FavouritesViewModel()
         
         AstronomyPictureDataRepository.addFavorite(data: data)
         
         // ACT
-        viewModel.deleteFavourite(data)
+        sut.deleteFavourite(data)
         
         // ASSERT
         XCTAssertNil(AstronomyPictureDataRepository.getFavorite(byDate: data.date))

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		093AEE202A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */; };
 		093AEE222A4CB17700B55DC7 /* APODService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */; };
+		093AEE262A4D31D200B55DC7 /* AstronomyPictureDataRepository_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093AEE252A4D31D200B55DC7 /* AstronomyPictureDataRepository_Tests.swift */; };
 		098BE8FF2A3883060087D150 /* APODApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BE8FE2A3883060087D150 /* APODApp.swift */; };
 		098BE9032A3883070087D150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9022A3883070087D150 /* Assets.xcassets */; };
 		098BE9062A3883070087D150 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BE9052A3883070087D150 /* Preview Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel_Tests.swift; sourceTree = "<group>"; };
 		093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService_Tests.swift; sourceTree = "<group>"; };
+		093AEE252A4D31D200B55DC7 /* AstronomyPictureDataRepository_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureDataRepository_Tests.swift; sourceTree = "<group>"; };
 		098BE8FB2A3883060087D150 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098BE8FE2A3883060087D150 /* APODApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODApp.swift; sourceTree = "<group>"; };
 		098BE9022A3883070087D150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				098BE9CF2A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift */,
 				093AEE1F2A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift */,
 				093AEE212A4CB17700B55DC7 /* APODService_Tests.swift */,
+				093AEE252A4D31D200B55DC7 /* AstronomyPictureDataRepository_Tests.swift */,
 			);
 			path = APODTests;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				098BE9C92A4C2CDD0087D150 /* APODTests.swift in Sources */,
 				093AEE222A4CB17700B55DC7 /* APODService_Tests.swift in Sources */,
 				093AEE202A4CAAE300B55DC7 /* FavouritesViewModel_Tests.swift in Sources */,
+				093AEE262A4D31D200B55DC7 /* AstronomyPictureDataRepository_Tests.swift in Sources */,
 				098BE9D02A4C2DD90087D150 /* HomeScreenViewModel_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

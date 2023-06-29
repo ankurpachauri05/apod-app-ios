@@ -9,108 +9,105 @@ import XCTest
 @testable import APOD
 
 final class HomeScreenViewModel_Tests: XCTestCase {
+    var sut: HomeScreenViewModel!
+    
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = HomeScreenViewModel()
+    }
 
-    func test_getAstronomyPictureOfDay_With_EmptyDateString_Returns_Failure() {
-        Task {
-            // ARRANGE
-            let viewModel = HomeScreenViewModel()
-            let date = ""
-            
-            // ACT
-            await viewModel.getAstronomyPictureOfDay(date)
-            
-            // ASSERT
-            XCTAssertTrue(viewModel.requestState.isFailure)
-            XCTAssertNotNil(viewModel.requestState.error)
-            
-        }
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+    }
+
+    func test_getAstronomyPictureOfDay_With_EmptyDateString_Returns_Failure() async {
+        // ARRANGE
+        let date = ""
+        
+        // ACT
+        await sut.getAstronomyPictureOfDay(date)
+        
+        // ASSERT
+        XCTAssertTrue(sut.requestState.isFailure)
+        XCTAssertNotNil(sut.requestState.error)
     }
     
-    func test_getAstronomyPictureOfDay_With_InvalidDateString_Returns_Failure() {
-        Task {
-            // ARRANGE
-            let viewModel = HomeScreenViewModel()
-            let date = "June 20, 2023"  // Valid format is yyyy-MM-dd
-            
-            // ACT
-            await viewModel.getAstronomyPictureOfDay(date)
-            
-            // ASSERT
-            XCTAssertTrue(viewModel.requestState.isFailure)
-            XCTAssertNotNil(viewModel.requestState.error)
-            
-        }
+    func test_getAstronomyPictureOfDay_With_InvalidDateString_Returns_Failure() async {
+        // ARRANGE
+        let date = "June 20, 2023"  // Valid format is yyyy-MM-dd
+        
+        // ACT
+        await sut.getAstronomyPictureOfDay(date)
+        
+        // ASSERT
+        XCTAssertTrue(sut.requestState.isFailure)
+        XCTAssertNotNil(sut.requestState.error)
     }
     
-    func test_getAstronomyPictureOfDay_With_ValidDateString_Returns_Success() {
-        Task {
-            // ARRANGE
-            let viewModel = HomeScreenViewModel()
-            let date = "2023-06-28"
-            
-            // ACT
-            await viewModel.getAstronomyPictureOfDay(date)
-            
-            // ASSERT
-            XCTAssertTrue(viewModel.requestState.isSuccess)
-            XCTAssertNotNil(viewModel.requestState.value)
-            
-        }
+    func test_getAstronomyPictureOfDay_With_ValidDateString_Returns_Success() async {
+        // ARRANGE
+        let date = "2023-06-28"
+        
+        // ACT
+        await sut.getAstronomyPictureOfDay(date)
+        
+        // ASSERT
+        XCTAssertTrue(sut.requestState.isSuccess)
+        XCTAssertNotNil(sut.requestState.value)
     }
     
     func test_addRemoveFavourite_With_NoPictureDataAndIsFavouriteFalse_Returns_IsFavouriteFalse() {
         // ARRANGE
-        let viewModel = HomeScreenViewModel()
-        viewModel.requestState = .failure(CustomError.noInternet)
-        viewModel.isFavourite = false
+        sut.requestState = .failure(CustomError.noInternet)
+        sut.isFavourite = false
         
         // ACT
-        viewModel.addRemoveFavourite()
+        sut.addRemoveFavourite()
         
         // ASSERT
-        XCTAssertFalse(viewModel.isFavourite)
+        XCTAssertFalse(sut.isFavourite)
     }
     
     func test_addRemoveFavourite_With_NoPictureDataAndIsFavouriteTrue_Returns_IsFavouriteTrue() {
         // ARRANGE
-        let viewModel = HomeScreenViewModel()
-        viewModel.requestState = .failure(CustomError.noInternet)
-        viewModel.isFavourite = true
+        sut.requestState = .failure(CustomError.noInternet)
+        sut.isFavourite = true
         
         // ACT
-        viewModel.addRemoveFavourite()
+        sut.addRemoveFavourite()
         
         // ASSERT
-        XCTAssertTrue(viewModel.isFavourite)
+        XCTAssertTrue(sut.isFavourite)
     }
     
     func test_addRemoveFavourite_With_PictureDataAndIsFavouriteFalse_Returns_IsFavouriteTrue() {
         // ARRANGE
         let data = AstronomyPicture.mockData()
-        let viewModel = HomeScreenViewModel()
-        viewModel.requestState = .success(data)
-        viewModel.isFavourite = false
+        
+        sut.requestState = .success(data)
+        sut.isFavourite = false
         
         // ACT
-        viewModel.addRemoveFavourite()
+        sut.addRemoveFavourite()
         
         // ASSERT
-        XCTAssertTrue(viewModel.isFavourite)
+        XCTAssertTrue(sut.isFavourite)
         XCTAssertNotNil(AstronomyPictureDataRepository.getFavorite(byDate: data.date))
     }
     
     func test_addRemoveFavourite_With_PictureDataAndIsFavouriteTrue_Returns_IsFavouriteFalse() {
         // ARRANGE
         let data = AstronomyPicture.mockData()
-        let viewModel = HomeScreenViewModel()
-        viewModel.requestState = .success(data)
-        viewModel.isFavourite = true
+        
+        sut.requestState = .success(data)
+        sut.isFavourite = true
         
         // ACT
-        viewModel.addRemoveFavourite()
+        sut.addRemoveFavourite()
         
         // ASSERT
-        XCTAssertFalse(viewModel.isFavourite)
+        XCTAssertFalse(sut.isFavourite)
         XCTAssertNil(AstronomyPictureDataRepository.getFavorite(byDate: data.date))
     }
 
