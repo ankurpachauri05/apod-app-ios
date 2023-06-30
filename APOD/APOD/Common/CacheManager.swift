@@ -8,12 +8,12 @@
 import SwiftUI
 
 protocol CacheManagerProtocol {
-    func cacheValue<T: Encodable>(_ value: T, forKey key: String)
-    func cachedValue<T: Decodable>(forKey key: String) -> T?
-    func cacheImage(_ image: Image, forKey key: String)
-    func cachedImage(forKey key: String) -> Image?
-    func removeCachedValue(forKey key: String)
-    func clearAllCache()
+    func cacheValue<T: Encodable>(_ value: T, forKey key: String) throws
+    func cachedValue<T: Decodable>(forKey key: String) throws -> T?
+    func cacheImage(_ image: Image, forKey key: String) throws
+    func cachedImage(forKey key: String) throws -> Image?
+    func removeCachedValue(forKey key: String) throws
+    func clearAllCache() throws
 }
 
 class CacheManager: CacheManagerProtocol {
@@ -23,73 +23,59 @@ class CacheManager: CacheManagerProtocol {
     
     private init() {}
     
-    func cacheValue<T: Encodable>(_ value: T, forKey key: String) {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(value)
-            
-            try cache.saveData(data, forKey: key)
-        } catch {
-            print("Error while saving cache: \(error)")
-        }
+    func cacheValue<T: Encodable>(_ value: T, forKey key: String) throws {
+        guard !key.isEmpty else { throw CachingError.invalidKey }
+        
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(value)
+        
+        try cache.saveData(data, forKey: key)
     }
     
-    func cachedValue<T: Decodable>(forKey key: String) -> T? {
-        do {
-            if let data = try cache.fetchData(forKey: key) {
-                let decoder = JSONDecoder()
-                let value = try decoder.decode(T.self, from: data)
-                
-                return value
-            }
-        } catch {
-            print("Error while fetching cache: \(error)")
+    func cachedValue<T: Decodable>(forKey key: String) throws -> T? {
+        guard !key.isEmpty else { throw CachingError.invalidKey }
+        
+        if let data = try cache.fetchData(forKey: key) {
+            let decoder = JSONDecoder()
+            let value = try decoder.decode(T.self, from: data)
+            
+            return value
         }
         
         return nil
     }
     
     @MainActor
-    func cacheImage(_ image: Image, forKey key: String) {
-        do {
-            let renderer = ImageRenderer(content: image)
-            
-            if let uiImage = renderer.uiImage,
-               let data = uiImage.jpegData(compressionQuality: 1.0) {
-                try cache.saveData(data, forKey: key)
-            }
-        } catch {
-            print("Error while saving cached image: \(error.localizedDescription)")
+    func cacheImage(_ image: Image, forKey key: String) throws {
+        guard !key.isEmpty else { throw CachingError.invalidKey }
+        
+        let renderer = ImageRenderer(content: image)
+        
+        if let uiImage = renderer.uiImage,
+           let data = uiImage.jpegData(compressionQuality: 1.0) {
+            try cache.saveData(data, forKey: key)
         }
     }
     
-    func cachedImage(forKey key: String) -> Image? {
-        do {
-            if let imageData = try cache.fetchData(forKey: key),
-               let uiImage = UIImage(data: imageData) {
-                return Image(uiImage: uiImage)
-            }
-        } catch {
-            print("Error while fetching cached image: \(error.localizedDescription)")
+    func cachedImage(forKey key: String) throws -> Image? {
+        guard !key.isEmpty else { throw CachingError.invalidKey }
+        
+        if let imageData = try cache.fetchData(forKey: key),
+           let uiImage = UIImage(data: imageData) {
+            return Image(uiImage: uiImage)
         }
         
         return nil
     }
     
-    func removeCachedValue(forKey key: String) {
-        do {
-            try cache.deleteData(forKey: key)
-        } catch {
-            print("Error while deleting cache file: \(error.localizedDescription)")
-        }
+    func removeCachedValue(forKey key: String) throws {
+        guard !key.isEmpty else { throw CachingError.invalidKey }
+        
+        try cache.deleteData(forKey: key)
     }
     
-    func clearAllCache() {
-        do {
-            try cache.deleteAllFiles()
-        } catch {
-            print("Error while clearing all cache files: \(error.localizedDescription)")
-        }
+    func clearAllCache() throws {
+        try cache.deleteAllFiles()
     }
 }
 

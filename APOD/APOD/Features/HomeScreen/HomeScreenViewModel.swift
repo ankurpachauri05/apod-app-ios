@@ -19,7 +19,7 @@ class HomeScreenViewModel: ObservableObject {
             return
         }
         
-        if let data: AstronomyPicture = CacheManager.shared.cachedValue(forKey: date) {
+        if let data: AstronomyPicture = try? CacheManager.shared.cachedValue(forKey: date) {
             // data already exist in cache..
             requestState = .success(data)
         } else {
@@ -30,7 +30,7 @@ class HomeScreenViewModel: ObservableObject {
                     requestState = .success(data)
                     
                     checkIfFavourite(data)
-                    CacheManager.shared.cacheValue(data, forKey: data.date)
+                    try? CacheManager.shared.cacheValue(data, forKey: data.date)
                 } catch {
                     requestState = .failure(error)
                 }

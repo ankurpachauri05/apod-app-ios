@@ -28,3 +28,8 @@ enum DirectoryError: Error {
     case fetchingFailed
     case deletionFailed
 }
+
+// MARK: CachingError
+enum CachingError: Error {
+    case invalidKey
+}
