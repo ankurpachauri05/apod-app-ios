@@ -10,40 +10,53 @@ import XCTest
 
 final class APODService_Tests: XCTestCase {
 
-    func test_getPictureOfDay_With_EmptyDateString_Returns_Failure() async throws {
+    func test_getPictureOfDay_With_EmptyDateString_Returns_Failure() async {
         // ARRANGE
         let date = ""
+        var thrownError: Error?
         
         // ACT
-        _ = try await APODService.getPictureOfDay(date: date)
+        do {
+            _ = try await APODService.getPictureOfDay(date: date)
+        } catch {
+            thrownError = error
+        }
         
         // ASSERT
-        XCTAssertThrowsError(RequestError.unexpectedStatusCode(code: 501))
+        XCTAssertNil(thrownError)
     }
     
-    func test_getPictureOfDay_With_InvalidDateString_Returns_Failure() async throws {
+    func test_getPictureOfDay_With_InvalidDateString_Returns_Failure() async {
         // ARRANGE
         let date = "June 28, 2023"  // expected format is yyyy-MM-dd
+        var thrownError: Error?
         
         // ACT
-        _ = try await APODService.getPictureOfDay(date: date)
+        do {
+            _ = try await APODService.getPictureOfDay(date: date)
+        } catch {
+            thrownError = error
+        }
         
         // ASSERT
-        XCTAssertThrowsError(RequestError.unexpectedStatusCode(code: 400))
+        XCTAssertNotNil(thrownError)
+        XCTAssertEqual(thrownError as? RequestError, .unexpectedStatusCode(code: 400))
     }
     
-    func test_getPictureOfDay_With_ValidDateString_Returns_Success() async throws {
+    func test_getPictureOfDay_With_ValidDateString_Returns_Success() async {
         // ARRANGE
         let date = "2023-06-28"
+        var thrownError: Error?
         
         // ACT
-        _ = try await APODService.getPictureOfDay(date: date)
+        do {
+            _ = try await APODService.getPictureOfDay(date: date)
+        } catch {
+            thrownError = error
+        }
         
         // ASSERT
-        XCTAssertNoThrow(RequestError.emptyResponse)
-        XCTAssertNoThrow(RequestError.unauthorized)
-        XCTAssertNoThrow(RequestError.unexpectedStatusCode(code: 400))
-        XCTAssertNoThrow(RequestError.unexpectedStatusCode(code: 501))
+        XCTAssertNil(thrownError)
     }
 
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: RequestError
-enum RequestError: Error {
+enum RequestError: Error, Equatable {
     case invalidURL
     case emptyResponse
     case unexpectedStatusCode(code: Int)

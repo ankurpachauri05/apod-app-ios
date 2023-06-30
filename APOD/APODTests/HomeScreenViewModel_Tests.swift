@@ -31,6 +31,7 @@ final class HomeScreenViewModel_Tests: XCTestCase {
         // ASSERT
         XCTAssertTrue(sut.requestState.isFailure)
         XCTAssertNotNil(sut.requestState.error)
+        XCTAssertEqual(sut.requestState.error as? CustomError, .emptyDateString)
     }
     
     func test_getAstronomyPictureOfDay_With_InvalidDateString_Returns_Failure() async {
@@ -43,6 +44,7 @@ final class HomeScreenViewModel_Tests: XCTestCase {
         // ASSERT
         XCTAssertTrue(sut.requestState.isFailure)
         XCTAssertNotNil(sut.requestState.error)
+        XCTAssertEqual(sut.requestState.error as? RequestError, .unexpectedStatusCode(code: 400))
     }
     
     func test_getAstronomyPictureOfDay_With_ValidDateString_Returns_Success() async {
@@ -55,6 +57,7 @@ final class HomeScreenViewModel_Tests: XCTestCase {
         // ASSERT
         XCTAssertTrue(sut.requestState.isSuccess)
         XCTAssertNotNil(sut.requestState.value)
+        XCTAssertNil(sut.requestState.error)
     }
     
     func test_addRemoveFavourite_With_NoPictureDataAndIsFavouriteFalse_Returns_IsFavouriteFalse() {
