@@ -14,6 +14,7 @@ protocol AstronomyPictureRepositoryProtocol {
     static func getAllFavorite() -> [AstronomyPicture]?
     static func getFavorite(byDate date: String) -> AstronomyPicture?
     static func deleteFavorite(byDate date: String) -> Bool
+    static func deleteAllRecords()
 }
 
 struct AstronomyPictureDataRepository : AstronomyPictureRepositoryProtocol {
@@ -75,5 +76,29 @@ struct AstronomyPictureDataRepository : AstronomyPictureRepositoryProtocol {
         return nil
     }
 
-    
+    static func deleteAllRecords() {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = PersistentStorage.shared.context
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDAstronomyPicture")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try privateContext.execute(batchDeleteRequest)
+            try privateContext.save()
+
+            PersistentStorage.shared.context.performAndWait {
+                do {
+                    try PersistentStorage.shared.context.save()
+                } catch {
+                    // Handle error
+                    print("Error saving main context: \(error.localizedDescription)")
+                }
+            }
+        } catch {
+            // Handle error
+            print("Error deleting records: \(error.localizedDescription)")
+        }
+    }
+
 }

@@ -14,6 +14,7 @@ final class HomeScreenViewModel_Tests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = HomeScreenViewModel()
+        AstronomyPictureDataRepository.deleteAllRecords()
     }
 
     override func tearDownWithError() throws {
@@ -105,6 +106,8 @@ final class HomeScreenViewModel_Tests: XCTestCase {
         
         sut.requestState = .success(data)
         sut.isFavourite = true
+        
+        AstronomyPictureDataRepository.addFavorite(data: data)
         
         // ACT
         sut.addRemoveFavourite()

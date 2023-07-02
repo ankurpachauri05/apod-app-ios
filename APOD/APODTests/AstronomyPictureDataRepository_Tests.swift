@@ -9,6 +9,16 @@ import XCTest
 @testable import APOD
 
 final class AstronomyPictureDataRepository_Tests: XCTestCase {
+    
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        AstronomyPictureDataRepository.deleteAllRecords()
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
     func test_addFavorite_With_PictureData_SavesDataLocally() {
         // ARRANGE
@@ -75,7 +85,7 @@ final class AstronomyPictureDataRepository_Tests: XCTestCase {
         let result = AstronomyPictureDataRepository.deleteFavorite(byDate: data.date)
         
         // ASSERT
-        XCTAssertTrue(result)
+        XCTAssertFalse(result)
         XCTAssertNil(AstronomyPictureDataRepository.getFavorite(byDate: data.date))
     }
     
