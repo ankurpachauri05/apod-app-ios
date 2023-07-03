@@ -133,7 +133,10 @@ final class FileCache {
     func deleteData(forKey key: String) throws {
         do {
             let fileURL = cacheDirectoryURL.appendingPathComponent(key)
-            try fileManager.removeItem(at: fileURL)
+            
+            if fileManager.fileExists(atPath: fileURL.path()) {
+                try fileManager.removeItem(at: fileURL)
+            }
         } catch {
             throw DirectoryError.deletionFailed
         }

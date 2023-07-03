@@ -31,8 +31,7 @@ struct APODDetailsView: View {
                                 .frame(maxWidth: .infinity)
                                 .scaledToFit()
                         } else {
-                            if let urlString = data.hdurl,
-                               let url = URL(string: urlString) {
+                            if let url = URL(string: data.url) {
                                 AsyncImage(url: url, content: { phase in
                                     view(for: phase, failStateImage: "placeholder", onSuccess: { image in
                                         try? CacheManager.shared.cacheImage(image, forKey: "\(data.date)_image")
